@@ -6,7 +6,7 @@
 
 前置：Python 3.8+；调度器（WorkBuddy / cron + 任意 agent 框架）；投递与预检环节需要本机 Chrome 以 CDP 9222 端口启动、目标平台已登录。
 
-**🚀 首选：让 AI Agent 替你装。** 如果你使用 Kimi Code 或 WorkBuddy，不必手动执行下面任何命令——直接使用 [`docs/agent_bootstrap_prompts.md`](docs/agent_bootstrap_prompts.md) 中现成的引导 prompt，对 agent 说一句"帮我从 GitHub 安装这个项目"，它会自动完成克隆 → 向你逐条收集信息 → 校验 → 生成产物 → 交付部署清单（采集不足时它会追问，不会用默认值静默填充）。
+**🚀 首选：让 AI Agent 替你装。** 如果你使用 Kimi Code 或 WorkBuddy，不必手动执行下面任何命令——让 agent 读取 [`docs/agent_bootstrap_prompts.md`](docs/agent_bootstrap_prompts.md)，按其中的引导 prompt 执行即可。
 
 <details>
 <summary><b>手动安装（无 AI agent 时）</b></summary>
