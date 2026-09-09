@@ -28,6 +28,8 @@
 | `build/prompts_personalized.md` | 5 段已填好你信息的 prompt，按提示粘进调度器即可 |
 | 部署清单 | 每个任务设几点、哪里需要人工确认，agent 会打印给你 |
 
+**定时任务的创建方式（WorkBuddy 官方流程）**：agent 按自然语言对话创建，每个任务都会弹出**配置预览由你确认**后才启用；任务 prompt 采用指针式写法（指向 `build/prompts_personalized.md` 对应章节），以后改模板文件任务自动跟随。建议先「测试运行」搜索任务，确认无误再让 5 个任务全部启用。
+
 **部署是否成功以验证器为准**：agent 会运行 `python setup/verify_deployment.py`，它直接读调度器数据库核对 5 个定时任务是否真实存在、时间是否正确——只有输出「定时任务 ✅ 5/5」才算装好。
 
 **以后换了简历**：对 agent 说"我换了简历"或手动重跑 `python setup/onboard.py`，画像会自动重建（系统用 SHA256 检测简历是否变动）。
@@ -43,8 +45,8 @@ python tests/run_tests.py          # 应输出 5/5 通过
 python setup/verify_deployment.py  # 建完定时任务后跑：核对 5 个任务存在且时间正确
 ```
 
-然后把 `build/prompts_personalized.md` 中的 5 段 prompt 分别建为每日定时任务：
-06:00 搜索 / 11:37 筛选 / 12:30 预检 / 13:00 投递 / 15:00 通知。
+然后把 `build/prompts_personalized.md` 中的 5 段 prompt 分别创建为每日定时任务（WorkBuddy 中用自然语言对话创建：例如"每天 06:00，读取 <路径>\prompts_personalized.md 中「1. 工作搜索」一节并严格执行"，确认配置预览后启用）：
+06:00 搜索 / 11:37 筛选 / 12:30 预检 / 13:00 投递 / 15:00 通知。建议先「测试运行」搜索任务再全部启用。
 
 </details>
 
