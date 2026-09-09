@@ -28,6 +28,8 @@
 | `build/prompts_personalized.md` | 5 段已填好你信息的 prompt，按提示粘进调度器即可 |
 | 部署清单 | 每个任务设几点、哪里需要人工确认，agent 会打印给你 |
 
+**部署是否成功以验证器为准**：agent 会运行 `python setup/verify_deployment.py`，它直接读调度器数据库核对 5 个定时任务是否真实存在、时间是否正确——只有输出「定时任务 ✅ 5/5」才算装好。
+
 **以后换了简历**：对 agent 说"我换了简历"或手动重跑 `python setup/onboard.py`，画像会自动重建（系统用 SHA256 检测简历是否变动）。
 
 <details>
@@ -38,6 +40,7 @@ git clone <this-repo> && cd job-pipeline-template
 python setup/onboard.py            # 回答问卷（13 组必填 + 6 项选填）
 python setup/apply_tokens.py       # 生成 build/prompts_personalized.md
 python tests/run_tests.py          # 应输出 5/5 通过
+python setup/verify_deployment.py  # 建完定时任务后跑：核对 5 个任务存在且时间正确
 ```
 
 然后把 `build/prompts_personalized.md` 中的 5 段 prompt 分别建为每日定时任务：
@@ -75,7 +78,7 @@ python tests/run_tests.py          # 应输出 5/5 通过
 | `docs/agent_bootstrap_prompts.md` | 给 AI agent 的引导 prompt（你 30 秒开始用的就是它） |
 | `docs/prompts_template.md` | 5 段管道 prompt 全文 + 契约附录（替换表/接入契约/脱敏清单） |
 | `contracts/` | 词表 `taxonomy.json`、字段映射 `field_map.json`、示例画像 |
-| `setup/` | `onboard.py` 接入向导 / `validate_profile.py` 校验器 / `apply_tokens.py` 占位符替换 |
+| `setup/` | `onboard.py` 接入向导 / `validate_profile.py` 画像校验 / `apply_tokens.py` 占位符替换 / `verify_deployment.py` 部署验证 |
 | `tests/` | 5 个虚构候选人测试（含 2 个"应该被拒绝"的反面用例） |
 
 ---
