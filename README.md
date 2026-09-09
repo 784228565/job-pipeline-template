@@ -63,7 +63,8 @@
 
 ```
 ├── docs/
-│   └── prompts_template.md        # 5 段 prompt 全文（占位符化）+ 数据流契约 + 附A替换表/附B接入契约/附C脱敏清单
+│   ├── prompts_template.md        # 5 段 prompt 全文（占位符化）+ 数据流契约 + 附A替换表/附B接入契约/附C脱敏清单
+│   └── agent_bootstrap_prompts.md # ★ 给 Kimi Code / WorkBuddy 的复制即用引导 prompt（新用户首选入口）
 ├── contracts/
 │   ├── taxonomy.json              # 技能同义词(17组)/学历序数/职级阶梯/地点归一化/大厂名单
 │   ├── field_map.json             # 输入 Excel 列名归一化 + URL 标准化规则（单一来源）
@@ -84,6 +85,8 @@
 ## 快速开始
 
 前置：Python 3.8+；调度器（WorkBuddy / cron + 任意 agent 框架）；投递与预检环节需要本机 Chrome 以 CDP 9222 端口启动、目标平台已登录。
+
+**如果你使用 Kimi Code 或 WorkBuddy**：不必手动执行下面任何命令——直接使用 [`docs/agent_bootstrap_prompts.md`](docs/agent_bootstrap_prompts.md) 中现成的引导 prompt，对 agent 说一句"帮我从 GitHub 安装这个项目"，它会自动完成克隆 → 向你逐条收集信息 → 校验 → 生成产物 → 交付部署清单（采集不足时它会追问，不会用默认值静默填充）。
 
 ```bash
 git clone <this-repo> && cd job-pipeline-template
