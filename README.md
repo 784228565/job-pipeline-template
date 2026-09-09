@@ -4,7 +4,7 @@
 
 ## 30 秒开始（推荐）
 
-打开 **Kimi Code** 或 **WorkBuddy**，粘贴这一句：
+打开 **WorkBuddy**，粘贴这一句：
 
 > 帮我读取并执行 https://github.com/784228565/job-pipeline-template/blob/master/docs/agent_bootstrap_prompts.md
 
