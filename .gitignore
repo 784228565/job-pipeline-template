@@ -23,3 +23,6 @@ __pycache__/
 *.pyc
 
 demo_answers.json
+
+# 宣传物料（仅本地）
+promo/
