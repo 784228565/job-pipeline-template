@@ -14,8 +14,8 @@
     "email": "shili.zhang@example.com",
     "citizenship": "中国公民",
     "current_location": "上海",
-    "japan_work_auth": "不适用",
-    "china_work_auth": "中国公民，无需担保"
+    "home_work_auth": "中国公民，无需担保",
+    "overseas_work_auth": "需雇主担保当地工作签证"
   },
   "education": [
     {
@@ -81,7 +81,7 @@
     "company_origin_rule": "美/欧/中大型企业，排除日企韩企",
     "years_of_experience": 0,
     "exclude_experience_years_min": 3,
-    "japan_rule": "无日本方向需求",
+    "overseas_rule": "无日本方向需求",
     "exclude_degree_requirement": [
       "要求博士在读或博士学位",
       "硕士及以上且明确不接受应届的社招"

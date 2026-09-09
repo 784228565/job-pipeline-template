@@ -238,7 +238,7 @@ URL 集合 attempted_urls：对每条记录的 url 列执行 URL 标准化（按
   - 学历判定用 education[].degree_level（taxonomy.json 的 degree_ordinal 给出口径；博士肄业不计入"最高已完成学历"）。
   - 届次身份用 graduation_identity.canonical：候选人为【2026届应届（硕士2024毕业、2年择业期内、从未缴社保，最后一年）】。禁止把候选人当作"2024届"去匹配岗位的届次限制。
   - 技能匹配用 skills_canonical + taxonomy.json 的 skill_synonyms 双向归一化。
-  - 身份/签证红线用 hard_constraints（含日本特定活动签证绝对排除条款）。
+  - 身份/签证红线用 hard_constraints（含 overseas_rule 海外岗位排除条款，如有）。
 3c｜画像中未覆盖的信息（如岗位问到而 JSON 没有的字段）→ 不猜测，回退读简历 PDF 补判；若 PDF 也没有，标"画像缺口"并在完成报告中提示用户补充。
 
 步骤 4｜筛选规则（四道闸门，依次执行。输入为步骤 2.5 的输出 N_after_delivery_exclusion）
@@ -894,7 +894,7 @@ Submitted: X  Skipped: Y  NeedsUser: Z  待处理: W  总计: N
 
 另有三处**结构性定制**（无法用 token 替代，必须人工改写）：
 1. 环节1 §1「⚠️ 候选人特殊身份约束」整段（当前为虚构示例）；
-2. 环节1 §0 的方向限定（农业/卫星/数据分析……）与环节2 步骤5 的高分特征；
+2. 环节1 §0/§1 的地点范围（示例为上海/日本）、方向限定与环节2 步骤5 的高分特征；环节1 §3 的搜索策略与 §5 统计口径也随地点调整；
 3. 环节4「已关闭的信息」清单（随目标平台实测更新）。
 
 ## 附 B：新用户接入契约（Profile 创建规范 · 「正确创建」判定标准）
@@ -913,7 +913,7 @@ Submitted: X  Skipped: Y  NeedsUser: Z  待处理: W  总计: N
 | `graduation_identity.canonical` | 非空，且包含届次年份（正则 `20\d\d\s*届`） |
 | `skills_canonical[]` | ≥3 条，且每条能在 taxonomy.json `skill_synonyms` 中归一化（或先补录词表） |
 | `hard_constraints.target_locations` | ≥1 个地点，且能被 taxonomy.json `location_canonical` 收录 |
-| `hard_constraints.japan_rule` | 非空（无日本需求时填 `"无日本方向需求"`，不得留空） |
+| `hard_constraints.overseas_rule` | 非空（不考虑海外时填 `"无海外方向需求"`，不得留空） |
 
 **B.2 选填字段**：`experience`、`publications`、`languages`、`directions`、`graduation_identity.note`。留空数组/缺省合法，不影响创建。
 

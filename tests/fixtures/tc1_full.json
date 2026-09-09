@@ -36,7 +36,6 @@
   "target_locations": [
     "上海"
   ],
-  "japan_rule": "无日本方向需求",
   "candidate_status": "非在读，可立即到岗",
   "languages": [
     "中文:native",
@@ -58,5 +57,6 @@
   "github_url": "https://github.com/shili-zhang",
   "portfolio_url": "",
   "linkedin_url": "https://www.linkedin.com/in/shili-zhang",
-  "salary_note": "实习薪资可谈"
+  "salary_note": "实习薪资可谈",
+  "overseas_rule": "无日本方向需求"
 }

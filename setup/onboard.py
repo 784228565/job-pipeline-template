@@ -101,9 +101,9 @@ def collect(a=None):
     locations = gl('target_locations', '目标城市（如 上海, 东京）')
     years_exp = int(g('years_of_experience', '正式工作年限（用于排除超出你年限的社招岗，0=应届无经验）', '0'))
     company_origins = g('company_origins', '目标公司国籍规则（如 "美/欧/中大型企业，排除日企韩企"）', '美/欧/中大型企业，排除日企韩企')
-    japan_rule = g('japan_rule', '日本方向签证规则（无日本需求填"无日本方向需求"）', '无日本方向需求')
-    china_auth = g('china_auth', '中国工作许可说明', '中国公民，无需担保')
-    japan_auth = g('japan_auth', '日本工作许可说明', '需雇主担保工作签证' if '日本' not in japan_rule and '无' not in japan_rule else '不适用')
+    overseas_rule = g('overseas_rule', '是否考虑海外岗位？（不考虑填"无海外方向需求"；考虑则写明国家/地区与签证需求，如 "新加坡：需雇主担保 EP 签证"）', '无海外方向需求')
+    china_auth = g('china_auth', '本国工作许可说明', '中国公民，无需担保')
+    overseas_auth = g('overseas_auth', '海外工作许可说明', '需雇主担保当地工作签证' if '无海外' not in overseas_rule else '不适用')
 
     print('=== 选填（可直接回车跳过）===')
     languages = gl('languages', '语言（如 中文:native, 英语:IELTS 6.0）')
@@ -130,7 +130,7 @@ def collect(a=None):
             'phone': phone, 'email': email,
             'citizenship': citizenship,
             'current_location': current_location,
-            'japan_work_auth': japan_auth, 'china_work_auth': china_auth,
+            'home_work_auth': china_auth, 'overseas_work_auth': overseas_auth,
         },
         'education': edu,
         'graduation_identity': {'canonical': canon, 'social_insurance': social_insurance},
@@ -146,7 +146,7 @@ def collect(a=None):
             'company_origin_rule': company_origins,
             'years_of_experience': years_exp,
             'exclude_experience_years_min': years_exp + 1,
-            'japan_rule': japan_rule,
+            'overseas_rule': overseas_rule,
             'exclude_experience_years_min': 3,
             'exclude_degree_requirement': ['要求博士在读或博士学位', '硕士及以上且明确不接受应届的社招'],
             'exclude_title_seniority': ['Manager', 'Senior', 'Lead', 'Principal'],

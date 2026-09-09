@@ -26,7 +26,6 @@
   "target_locations": [
     "火星"
   ],
-  "japan_rule": "",
   "candidate_status": "在职",
   "phone": "13100006666",
   "industries": [
@@ -40,5 +39,6 @@
   "github_url": "https://github.com/zhao-invalid",
   "portfolio_url": "",
   "linkedin_url": "",
-  "salary_note": ""
+  "salary_note": "",
+  "overseas_rule": ""
 }

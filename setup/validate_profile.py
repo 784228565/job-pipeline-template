@@ -121,8 +121,8 @@ def validate(profile_path, taxonomy_path=None, check_file=True):
             if loc not in known_loc:
                 errors.append(f'目标地点 "{loc}" 不在 taxonomy.json 的 location_canonical 中')
 
-    if not str(hc.get('japan_rule', '')).strip():
-        errors.append('hard_constraints.japan_rule 为空（无日本需求时填 "无日本方向需求"）')
+    if not str(hc.get('overseas_rule', '')).strip():
+        errors.append('hard_constraints.overseas_rule 为空（无海外需求时填 "无海外方向需求"）')
     if not str(hc.get('company_origin_rule', '')).strip():
         errors.append('hard_constraints.company_origin_rule 为空（如 "美/欧/中大型企业，排除日企韩企"）')
 

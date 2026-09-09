@@ -2,9 +2,9 @@
 """
 测试运行器：用 5 个虚构候选人 fixture 端到端验证「画像创建」流程。
   TC1 完整档案        → 期望通过
-  TC2 日本签证方向    → 期望通过
+  TC2 海外岗位方向    → 期望通过
   TC3 最小档案（选填全空）→ 期望通过
-  TC4 非法字段        → 期望失败（degree_level/届次/技能归一化/地点/japan_rule）
+  TC4 非法字段        → 期望失败（degree_level/届次/技能归一化/地点/overseas_rule）
   TC5 简历换了但 hash 未更新 → 期望失败（哈希不匹配）
 用法：python tests/run_tests.py
 """
@@ -21,7 +21,7 @@ TAX = os.path.join(REPO, 'contracts', 'taxonomy.json')
 
 CASES = [
     ('tc1_full.json', True, '完整档案'),
-    ('tc2_japan.json', True, '日本签证方向'),
+    ('tc2_japan.json', True, '海外岗位（日本签证示例）'),
     ('tc3_minimal.json', True, '最小档案（选填全空）'),
     ('tc4_invalid.json', False, '非法字段'),
     ('tc5_stale_hash.json', False, '简历已更换但画像 hash 过期'),

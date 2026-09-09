@@ -28,7 +28,6 @@
     "上海",
     "东京"
   ],
-  "japan_rule": "仅收可办理技术·人文知识·国际业务签证的正社员/New Grad 岗位；排除要求在校学籍的特定活动签证实习岗",
   "candidate_status": "应届，需日本签证担保",
   "languages": [
     "中文:native",
@@ -47,5 +46,6 @@
   "github_url": "",
   "portfolio_url": "",
   "linkedin_url": "",
-  "salary_note": ""
+  "salary_note": "",
+  "overseas_rule": "仅收可办理技术·人文知识·国际业务签证的正社员/New Grad 岗位；排除要求在校学籍的特定活动签证实习岗"
 }
