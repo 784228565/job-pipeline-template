@@ -2,6 +2,38 @@
 
 > 一套可复刻的求职自动化管道模板：5 个定时 LLM Agent 串联「搜索 → 筛选 → 预检 → 投递 → 通知」全链路，通过**文件契约**解耦，个人事实全部参数化，新用户跑一个引导脚本即可接入。
 
+## 快速开始
+
+前置：Python 3.8+；调度器（WorkBuddy / cron + 任意 agent 框架）；投递与预检环节需要本机 Chrome 以 CDP 9222 端口启动、目标平台已登录。
+
+**🚀 首选：让 AI Agent 替你装。** 如果你使用 Kimi Code 或 WorkBuddy，不必手动执行下面任何命令——直接使用 [`docs/agent_bootstrap_prompts.md`](docs/agent_bootstrap_prompts.md) 中现成的引导 prompt，对 agent 说一句"帮我从 GitHub 安装这个项目"，它会自动完成克隆 → 向你逐条收集信息 → 校验 → 生成产物 → 交付部署清单（采集不足时它会追问，不会用默认值静默填充）。
+
+<details>
+<summary><b>手动安装（无 AI agent 时）</b></summary>
+
+```bash
+git clone <this-repo> && cd job-pipeline-template
+
+# 1. 接入：回答 16 项必填 + 7 项选填，提供简历 PDF 路径
+python setup/onboard.py                 # 或 --answers answers.json 非交互
+#    → contracts/candidate_profile.json（画像，含简历 SHA256）
+#    → local_tokens.json（11+5 种占位符替换值）
+#    生成即按附B契约校验，不通过逐条报错
+
+# 2. 生成个人版 prompt
+python setup/apply_tokens.py            # → build/prompts_personalized.md（零残留占位符）
+
+# 3. 部署：把 5 段 prompt 粘贴进调度器，设好 06:00/11:37/12:30/13:00/15:00 五个定时
+#    并按 docs 附A 改写 3 处结构性段落（身份约束叙述/方向限定/平台黑名单）
+
+# 4. 验证
+python tests/run_tests.py               # 5/5 通过
+```
+
+</details>
+
+**换简历**：重跑 `onboard.py`，或在筛选 Agent 运行时它会自动发现 hash 不一致并重建画像（TC5 测的就是这个）。
+
 ## 这个项目解决什么问题
 
 求职投递是高频、规则明确、跨平台重复的劳动。本模板把整个过程拆成 5 个职责单一、可独立演进的 Agent 阶段，每个阶段是调度器（WorkBuddy 等）里的一条定时 prompt，阶段之间**只通过文件通信**——因此你可以单独替换任一环节（换搜索源、换评分模型、换通知渠道）而不影响其他环节。
@@ -63,8 +95,8 @@
 
 ```
 ├── docs/
-│   ├── prompts_template.md        # 5 段 prompt 全文（占位符化）+ 数据流契约 + 附A替换表/附B接入契约/附C脱敏清单
-│   └── agent_bootstrap_prompts.md # ★ 给 Kimi Code / WorkBuddy 的复制即用引导 prompt（新用户首选入口）
+│   ├── agent_bootstrap_prompts.md # ★ 给 Kimi Code / WorkBuddy 的复制即用引导 prompt（新用户首选入口）
+│   └── prompts_template.md        # 5 段 prompt 全文（占位符化）+ 数据流契约 + 附A替换表/附B接入契约/附C脱敏清单
 ├── contracts/
 │   ├── taxonomy.json              # 技能同义词(17组)/学历序数/职级阶梯/地点归一化/大厂名单
 │   ├── field_map.json             # 输入 Excel 列名归一化 + URL 标准化规则（单一来源）
@@ -81,33 +113,6 @@
 ├── .gitignore                     # 排除真实画像/token/简历/运行时产物
 └── README.md
 ```
-
-## 快速开始
-
-前置：Python 3.8+；调度器（WorkBuddy / cron + 任意 agent 框架）；投递与预检环节需要本机 Chrome 以 CDP 9222 端口启动、目标平台已登录。
-
-**如果你使用 Kimi Code 或 WorkBuddy**：不必手动执行下面任何命令——直接使用 [`docs/agent_bootstrap_prompts.md`](docs/agent_bootstrap_prompts.md) 中现成的引导 prompt，对 agent 说一句"帮我从 GitHub 安装这个项目"，它会自动完成克隆 → 向你逐条收集信息 → 校验 → 生成产物 → 交付部署清单（采集不足时它会追问，不会用默认值静默填充）。
-
-```bash
-git clone <this-repo> && cd job-pipeline-template
-
-# 1. 接入：回答 16 项必填 + 7 项选填，提供简历 PDF 路径
-python setup/onboard.py                 # 或 --answers answers.json 非交互
-#    → contracts/candidate_profile.json（画像，含简历 SHA256）
-#    → local_tokens.json（11+5 种占位符替换值）
-#    生成即按附B契约校验，不通过逐条报错
-
-# 2. 生成个人版 prompt
-python setup/apply_tokens.py            # → build/prompts_personalized.md（零残留占位符）
-
-# 3. 部署：把 5 段 prompt 粘贴进调度器，设好 06:00/11:37/12:30/13:00/15:00 五个定时
-#    并按 docs 附A 改写 3 处结构性段落（身份约束叙述/方向限定/平台黑名单）
-
-# 4. 验证
-python tests/run_tests.py               # 5/5 通过
-```
-
-**换简历**：重跑 `onboard.py`，或在筛选 Agent 运行时它会自动发现 hash 不一致并重建画像（TC5 测的就是这个）。
 
 ## 关键机制
 
