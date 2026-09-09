@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1080px; height:810px; overflow:hidden;
+    font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+    background:linear-gradient(150deg,#0b1020 0%,#0e1c40 50%,#1c1045 100%);
+    color:#eef2ff; padding:50px 60px; position:relative; }
+  .glow { position:absolute; width:460px; height:460px; border-radius:50%;
+    background:#4f8cff; filter:blur(120px); opacity:.4; top:-160px; left:50%; margin-left:-230px; }
+  h2 { font-size:46px; font-weight:800; text-align:center; margin-top:6px; }
+  h2 .grad { background:linear-gradient(90deg,#6ea8ff,#b78bff);
+    -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .step { text-align:center; margin-top:26px; font-size:24px; color:#9aa8cf; }
+  .paste { margin:22px auto 0; max-width:920px; background:#0a0e1e;
+    border:1px solid rgba(140,170,255,.35); border-radius:18px; padding:26px 30px;
+    font-family:Consolas,monospace; font-size:24px; color:#8fd3ff; line-height:1.5; word-break:break-all; }
+  .check { margin:26px auto 0; max-width:920px; background:rgba(255,255,255,.05);
+    border:1px solid rgba(140,170,255,.2); border-radius:18px; padding:20px 30px; }
+  .check p { font-size:22px; color:#b9c4e8; line-height:1.7; }
+  .check b { color:#eef2ff; }
+  .url { text-align:center; margin-top:30px; font-family:Consolas,monospace;
+    font-size:27px; font-weight:700;
+    background:linear-gradient(90deg,#6ea8ff,#b78bff);
+    -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .note { text-align:center; margin-top:10px; font-size:20px; color:#8b9ac6; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <h2>30 秒开始：<span class="grad">粘贴一句话</span></h2>
+  <p class="step">打开 WorkBuddy，发送：</p>
+  <div class="paste">帮我读取并执行<br>github.com/784228565/job-pipeline-template<br>/blob/master/docs/agent_bootstrap_prompts.md</div>
+  <div class="check">
+    <p><b>开始前备好</b>（约 10 分钟）：简历 PDF · 中英文姓名 · 邮箱手机号 ·
+    学历情况 · 届次身份（含是否缴过社保）· ≥3 个技能 · 目标行业/城市 · 工作年限 · 是否考虑海外岗位</p>
+  </div>
+  <div class="url">github.com/784228565/job-pipeline-template</div>
+  <p class="note">信息问不齐它不会往下跑 —— 不会替你瞎编</p>
+</body>
+</html>

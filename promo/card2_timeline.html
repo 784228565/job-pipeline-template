@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1080px; height:810px; overflow:hidden;
+    font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+    background:linear-gradient(150deg,#0b1020 0%,#0e1a38 60%,#131036 100%);
+    color:#eef2ff; padding:50px 60px; position:relative; }
+  .glow { position:absolute; width:380px; height:380px; border-radius:50%;
+    background:#3f7dff; filter:blur(100px); opacity:.4; top:-140px; left:-120px; }
+  h2 { font-size:44px; font-weight:800; }
+  h2 .grad { background:linear-gradient(90deg,#6ea8ff,#b78bff);
+    -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .sub { margin-top:8px; font-size:24px; color:#9aa8cf; }
+  .row { display:flex; gap:22px; margin-top:22px; background:rgba(255,255,255,.055);
+    border:1px solid rgba(140,170,255,.22); border-radius:18px; padding:20px 24px; align-items:center; }
+  .time { font-family:Consolas,monospace; font-size:30px; font-weight:700; color:#8fd3ff; width:120px; }
+  .name { font-size:28px; font-weight:800; width:110px; }
+  .desc { font-size:22px; color:#b9c4e8; line-height:1.45; flex:1; }
+  .row:nth-child(odd) { background:rgba(120,140,255,.07); }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <h2>它的<span class="grad">一天</span>，你不用管</h2>
+  <p class="sub">每天自动跑完一条求职流水线</p>
+  <div class="row"><div class="time">06:00</div><div class="name">搜索</div>
+    <div class="desc">扫各招聘平台和公司官网，整理约 100 个岗位进 Excel</div></div>
+  <div class="row"><div class="time">11:37</div><div class="name">筛选</div>
+    <div class="desc">去重 → 排除已投 → 四道硬闸门 → 按「上岸容易度」打分排序</div></div>
+  <div class="row"><div class="time">12:30</div><div class="name">预检</div>
+    <div class="desc">检查各平台登录态：掉登录 / 验证码墙 / 区域封锁，提前标记</div></div>
+  <div class="row"><div class="time">13:00</div><div class="name">投递</div>
+    <div class="desc">浏览器自动化逐岗投递，截图留证，状态实时写回 CSV</div></div>
+  <div class="row"><div class="time">15:00</div><div class="name">通知</div>
+    <div class="desc">邮件汇总「没投成的 + 原因 + 建议动作」，附今日/累计投递数</div></div>
+</body>
+</html>

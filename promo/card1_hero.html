@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1080px; height:810px; overflow:hidden;
+    font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+    background:linear-gradient(150deg,#0b1020 0%,#101a3a 55%,#1a1040 100%);
+    color:#eef2ff; padding:56px 64px; position:relative; }
+  .glow { position:absolute; border-radius:50%; filter:blur(90px); opacity:.5; }
+  .g1 { width:420px; height:420px; background:#4f8cff; top:-140px; right:-100px; }
+  .g2 { width:360px; height:360px; background:#9d6bff; bottom:-160px; left:-80px; }
+  .badge { display:inline-block; padding:10px 22px; border-radius:999px;
+    border:1.5px solid rgba(140,170,255,.55); color:#a8c0ff; font-size:24px; letter-spacing:2px; }
+  h1 { margin-top:34px; font-size:64px; line-height:1.25; font-weight:800; }
+  h1 .grad { background:linear-gradient(90deg,#6ea8ff,#b78bff);
+    -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .sub { margin-top:22px; font-size:28px; color:#b9c4e8; line-height:1.6; }
+  .mono { font-family:Consolas,monospace; color:#8fd3ff; }
+  .timeline { margin-top:46px; background:rgba(255,255,255,.06);
+    border:1px solid rgba(140,170,255,.25); border-radius:22px; padding:26px 30px; }
+  .steps { display:flex; justify-content:space-between; align-items:center; }
+  .step { text-align:center; }
+  .step .dot { width:18px; height:18px; border-radius:50%; margin:0 auto 10px;
+    background:linear-gradient(135deg,#6ea8ff,#b78bff); box-shadow:0 0 14px #6ea8ff88; }
+  .step .t { font-size:22px; color:#8fa3d8; font-family:Consolas,monospace; }
+  .step .n { font-size:26px; font-weight:700; margin-top:4px; }
+  .arrow { color:#5a6ca8; font-size:30px; padding-bottom:34px; }
+  .footer { position:absolute; bottom:42px; left:64px; right:64px;
+    display:flex; justify-content:space-between; align-items:flex-end; }
+  .url { font-family:Consolas,monospace; font-size:24px; color:#7f93c8; }
+  .tag { font-size:22px; color:#9aa8cf; }
+</style>
+</head>
+<body>
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <span class="badge">开源 · 模板 · 免费复刻</span>
+  <h1>求职投递，<br>交给一条<span class="grad">自动化流水线</span></h1>
+  <p class="sub"><span class="mono">job-pipeline-template</span> —— 5 个定时 AI Agent，<br>从搜岗位到投出去，每天自动跑完</p>
+  <div class="timeline">
+    <div class="steps">
+      <div class="step"><div class="dot"></div><div class="t">06:00</div><div class="n">搜索</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="dot"></div><div class="t">11:37</div><div class="n">筛选</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="dot"></div><div class="t">12:30</div><div class="n">预检</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="dot"></div><div class="t">13:00</div><div class="n">投递</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="dot"></div><div class="t">15:00</div><div class="n">通知</div></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="url">github.com/784228565/job-pipeline-template</div>
+    <div class="tag">你只用告诉它一次你是谁</div>
+  </div>
+</body>
+</html>
