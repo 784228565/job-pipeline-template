@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "purpose": "共享规范化词表（taxonomy）。搜索/筛选/投递各环节引用本文件，禁止在 prompt 内各自维护同义词表。修改技能映射只改这里。",
+  "skill_synonyms": {
+    "Python": ["Python", "python", "PYTHON"],
+    "JavaScript": ["JavaScript", "JS", "js", "前端脚本"],
+    "SQL": ["SQL", "MySQL", "PostgreSQL", "Hive SQL", "数据库查询"],
+    "Deep Learning": ["深度学习", "Deep Learning", "DL", "神经网络", "Neural Network"],
+    "Computer Vision": ["计算机视觉", "Computer Vision", "CV", "图像算法"],
+    "Machine Learning": ["机器学习", "Machine Learning", "ML"],
+    "Data Engineering": ["数据工程", "Data Engineering", "数仓", "ETL", "数据管道", "Data Pipeline"],
+    "Data Analysis": ["数据分析", "Data Analysis", "商业分析", "Business Analysis", "BI", "经营分析"],
+    "Blockchain": ["区块链", "Blockchain", "Web3", "分布式账本"],
+    "OCR": ["OCR", "文字识别", "图像识别（文字方向）", "RapidOCR"],
+    "Wireless Sensing": ["无线感知", "Wireless Sensing", "WiFi感知"],
+    "LLM": ["LLM", "大模型", "大语言模型", "GenAI", "生成式AI", "AIGC"],
+    "AI-Agent": ["AI Agent", "AI-Agent", "智能体", "Agent开发", "RAG", "MCP"],
+    "Robotics": ["机器人", "具身智能", "Embodied AI", "Robotics"],
+    "PyTorch": ["PyTorch", "pytorch", "Torch"],
+    "OpenCV": ["OpenCV", "opencv", "图像处理"],
+    "SpringBoot": ["SpringBoot", "Spring Boot", "Java后端"],
+    "WeChat Cloud Dev": ["微信小程序", "云开发", "WeChat Cloud"]
+  },
+  "degree_ordinal": {
+    "1": "本科/Bachelor",
+    "2": "硕士/Master",
+    "3": "博士/PhD",
+    "rule": "岗位写'硕士及以上'→ 要求 level>=2；候选人最高已完成 level=2（博士肄业不计）。"
+  },
+  "title_seniority_ladder": {
+    "entry": ["Intern", "实习", "New Grad", "应届", "校招", "Entry-Level", "Junior", "助理"],
+    "excluded": ["Senior", "高级", "Staff", "Lead", "Principal", "Manager", "经理", "负责人", "Director"],
+    "rule": "岗位标题命中 excluded 且无 entry 词 → 视为超出应届级别。"
+  },
+  "location_canonical": {
+    "上海": ["上海", "Shanghai", "浦东", "徐汇", "杨浦", "闵行", "静安"],
+    "北京": ["北京", "Beijing", "海淀", "朝阳", "望京"],
+    "深圳": ["深圳", "Shenzhen", "南山", "福田"],
+    "广州": ["广州", "Guangzhou", "天河", "黄埔"],
+    "杭州": ["杭州", "Hangzhou", "西湖", "滨江"],
+    "成都": ["成都", "Chengdu", "高新"],
+    "东京": ["东京", "Tokyo", "東京", "横浜", "横滨", "川崎", "首都圈", "千叶", "埼玉"]
+  },
+  "company_competition_presets": {
+    "big_cn_internet": ["腾讯", "阿里", "字节跳动", "美团", "京东", "拼多多", "百度", "网易", "滴滴", "小米", "华为", "快手", "B站", "小红书", "得物"],
+    "big_foreign_tech": ["Google", "Microsoft", "Amazon", "Meta", "Apple", "OpenAI", "Nvidia", "Tesla", "Oracle", "SAP", "IBM", "Intel"],
+    "big_finance_consulting": ["高盛", "摩根", "中金", "中信", "三中一华", "麦肯锡", "BCG", "贝恩", "德勤", "普华永道", "安永", "毕马威"],
+    "rule": "命中名单的公司核心岗（算法/后端/前端/产品/数据科学家/管培生）默认高竞争；边缘业务线/非总部/实习非转正可降级。发现新晋大厂时更新本文件而非 prompt。"
+  }
+}

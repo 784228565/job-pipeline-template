@@ -1,0 +1,25 @@
+# ===== 个人数据（绝不提交）=====
+contracts/candidate_profile.json
+local_tokens.json
+build/
+
+# 真实简历与求职材料
+*.pdf
+!tests/assets/dummy_resume.pdf
+*.eml
+
+# 运行时产物
+搜索agent/
+筛选agent/
+投递状态记录/
+notify_log/
+screenshots*/
+*.xlsx
+delivery_*.csv
+applicable_today.csv
+
+# Python
+__pycache__/
+*.pyc
+
+demo_answers.json

@@ -1,0 +1,44 @@
+{
+  "name_cn": "赵非法",
+  "name_en": "Invalid Zhao",
+  "email": "invalid.zhao@example.com",
+  "citizenship": "中国公民",
+  "resume_pdf": "tests/assets/dummy_resume.pdf",
+  "education": [
+    {
+      "degree_level": 5,
+      "degree": "博士后",
+      "school": "不存在大学",
+      "field": "玄学",
+      "period": "2020-2024",
+      "status": "已毕业"
+    }
+  ],
+  "graduation_identity": "刚毕业没多久",
+  "skills": [
+    "Python",
+    "SQL",
+    "降龙十八掌"
+  ],
+  "directions": [
+    "数据分析"
+  ],
+  "target_locations": [
+    "火星"
+  ],
+  "japan_rule": "",
+  "candidate_status": "在职",
+  "phone": "13100006666",
+  "industries": [
+    "玄学产业"
+  ],
+  "current_location": "上海",
+  "available_start": "随时",
+  "social_insurance": "",
+  "years_of_experience": -3,
+  "company_origins": "",
+  "github_url": "https://github.com/zhao-invalid",
+  "portfolio_url": "",
+  "linkedin_url": "",
+  "salary_note": ""
+}

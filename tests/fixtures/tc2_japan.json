@@ -1,0 +1,51 @@
+{
+  "name_cn": "李测试",
+  "name_en": "Test Li",
+  "email": "test.li@example.org",
+  "citizenship": "中国公民",
+  "resume_pdf": "tests/assets/dummy_resume.pdf",
+  "education": [
+    {
+      "degree_level": 1,
+      "degree": "本科",
+      "school": "虚构理工大学",
+      "field": "数据科学",
+      "period": "2021-2025",
+      "status": "已毕业"
+    }
+  ],
+  "graduation_identity": "2025届应届（本科应届）",
+  "skills": [
+    "Python",
+    "Machine Learning",
+    "Data Analysis"
+  ],
+  "directions": [
+    "商业分析",
+    "AI"
+  ],
+  "target_locations": [
+    "上海",
+    "东京"
+  ],
+  "japan_rule": "仅收可办理技术·人文知识·国际业务签证的正社员/New Grad 岗位；排除要求在校学籍的特定活动签证实习岗",
+  "candidate_status": "应届，需日本签证担保",
+  "languages": [
+    "中文:native",
+    "日语:JLPT N2"
+  ],
+  "phone": "13900002222",
+  "industries": [
+    "外企500强",
+    "互联网"
+  ],
+  "current_location": "杭州",
+  "available_start": "2026-10-01",
+  "social_insurance": "从未缴纳",
+  "years_of_experience": 0,
+  "company_origins": "外企优先，不限国籍",
+  "github_url": "",
+  "portfolio_url": "",
+  "linkedin_url": "",
+  "salary_note": ""
+}

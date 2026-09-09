@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0",
+  "purpose": "筛选 Agent 的候选人画像契约（CandidateProfile IR）。",
+  "resume_source": {
+    "file": "C:/Users/<USER>",
+    "sha256": "573ddec6c60995f5d1fa2e89718be07b65b1f9121c8d2d427eb3809d562824f8",
+    "parsed_at": "2026-09-09",
+    "rule": "简历文件变更后须重新运行 onboard.py 重建本文件。"
+  },
+  "identity": {
+    "name_cn": "张示例",
+    "name_en": "Shili Zhang",
+    "phone": "13800001111",
+    "email": "shili.zhang@example.com",
+    "citizenship": "中国公民",
+    "current_location": "上海",
+    "japan_work_auth": "不适用",
+    "china_work_auth": "中国公民，无需担保"
+  },
+  "education": [
+    {
+      "degree_level": 2,
+      "degree": "硕士",
+      "school": "示例大学",
+      "field": "计算机科学",
+      "period": "2022-2025",
+      "status": "已毕业"
+    },
+    {
+      "degree_level": 1,
+      "degree": "本科",
+      "school": "样例学院",
+      "field": "软件工程",
+      "period": "2018-2022",
+      "status": "已毕业"
+    }
+  ],
+  "graduation_identity": {
+    "canonical": "2026届应届（毕业2年窗口内、未缴社保）",
+    "social_insurance": "从未缴纳"
+  },
+  "availability": {
+    "start": "随时",
+    "notice_period": "None"
+  },
+  "links": {
+    "github": "https://github.com/shili-zhang",
+    "portfolio": "",
+    "linkedin": "https://www.linkedin.com/in/shili-zhang"
+  },
+  "compensation": {
+    "note": "实习薪资可谈"
+  },
+  "skills_canonical": [
+    "Python",
+    "SQL",
+    "Deep Learning",
+    "Data Analysis"
+  ],
+  "languages": [
+    {
+      "lang": "中文",
+      "level": "native"
+    },
+    {
+      "lang": "英语",
+      "level": "IELTS 7.0"
+    }
+  ],
+  "publications": [
+    "一作 EI：示例会议 2025"
+  ],
+  "hard_constraints": {
+    "target_locations": [
+      "上海"
+    ],
+    "target_industries": [
+      "农业科技",
+      "数据分析服务"
+    ],
+    "company_origin_rule": "美/欧/中大型企业，排除日企韩企",
+    "years_of_experience": 0,
+    "exclude_experience_years_min": 3,
+    "japan_rule": "无日本方向需求",
+    "exclude_degree_requirement": [
+      "要求博士在读或博士学位",
+      "硕士及以上且明确不接受应届的社招"
+    ],
+    "exclude_title_seniority": [
+      "Manager",
+      "Senior",
+      "Lead",
+      "Principal"
+    ],
+    "visa_dealbreakers": []
+  },
+  "directions": [
+    "数据分析",
+    "机器学习"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "{{ROOT}}": "C:/Users/<USER>",
+  "{{ROOT_JS}}": "C:/Users/<USER>",
+  "{{WB_ROOT}}": "C:/Users/<USER>",
+  "{{CANDIDATE_NAME_CN}}": "张示例",
+  "{{CANDIDATE_NAME_EN}}": "Shili Zhang",
+  "{{CANDIDATE_NAME}}": "shilizhang",
+  "{{NAME_EN_REGEX}}": "Shili\\s?Zhang",
+  "{{NOTIFY_EMAIL}}": "shili.zhang@example.com",
+  "{{PHONE}}": "13800001111",
+  "{{CURRENT_LOCATION}}": "上海",
+  "{{COMPANY_ORIGIN_RULE}}": "美/欧/中大型企业，排除日企韩企",
+  "{{JOB_FOCUS}}": "农业科技、数据分析服务、数据分析、机器学习",
+  "{{RESUME_PDF}}": "dummy_resume.pdf",
+  "{{CANDIDATE_EDUCATION_SUMMARY}}": "示例大学 硕士 (2022-2025); 样例学院 本科 (2018-2022)",
+  "{{CANDIDATE_STATUS}}": "非在读，可立即到岗"
+}

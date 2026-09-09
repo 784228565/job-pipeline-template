@@ -1,0 +1,44 @@
+{
+  "name_cn": "王最小",
+  "name_en": "Minimal Wang",
+  "email": "minimal.wang@example.net",
+  "citizenship": "中国公民",
+  "resume_pdf": "tests/assets/dummy_resume.pdf",
+  "education": [
+    {
+      "degree_level": 2,
+      "degree": "硕士",
+      "school": "测试大学",
+      "field": "统计学",
+      "period": "2022-2024",
+      "status": "已毕业"
+    }
+  ],
+  "graduation_identity": "2024届（往届，走社招初级岗）",
+  "skills": [
+    "Python",
+    "SQL",
+    "Data Analysis"
+  ],
+  "directions": [
+    "数据分析"
+  ],
+  "target_locations": [
+    "上海"
+  ],
+  "japan_rule": "无日本方向需求",
+  "candidate_status": "离职状态，可立即到岗",
+  "phone": "15000003333",
+  "industries": [
+    "数据分析服务"
+  ],
+  "current_location": "上海",
+  "available_start": "随时",
+  "social_insurance": "缴纳过",
+  "years_of_experience": 1,
+  "company_origins": "不限",
+  "github_url": "",
+  "portfolio_url": "",
+  "linkedin_url": "",
+  "salary_note": ""
+}
